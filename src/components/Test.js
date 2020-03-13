@@ -2,13 +2,20 @@ import React, {Component} from "react";
 
 class Test extends Component{
     render() {
-        console.log(this.props);
-        const {name, age, profession} = this.props
+        const { users } = this.props;
+        const userList = users.map(user=>{
+            return (
+                <div key={user.id}>
+                    <p>Name : { user.name }</p>
+                    <p>Age : { user.age }</p>
+                    <p>Profession : { user.profession }</p>
+                </div>
+            );
+        });
+
         return(
             <div>
-                <p>Name : { name }</p>
-                <p>Age : { age }</p>
-                <p>Profession : { profession }</p>
+                { userList }
             </div>
         );
     }
