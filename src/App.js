@@ -11,13 +11,22 @@ class App extends Component{
             {id : 4, name : 'Juton',age : 35, profession : 'Businessman'},
         ]
     };
+
+    createUser = (user) => {
+        user.id = Math.random();
+        let users = [...this.state.users, user];
+        this.setState({
+            users : users
+        })
+    }
+
   render() {
     return (
         <div className="App">
             <h1>My First React App</h1>
             <p>Welcome to my app :)</p>
             <Users users={this.state.users}/>
-            <CreateUser />
+            <CreateUser createUser = {this.createUser} />
         </div>
     );
   }

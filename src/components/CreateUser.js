@@ -9,7 +9,7 @@ class CreateUser extends Component{
 
     onSubmitHandler = (e) => {
         e.preventDefault();
-        console.log(this.state);
+        this.props.createUser(this.state);
     }
 
     changeHandler = (e) => {
