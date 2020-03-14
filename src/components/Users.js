@@ -3,7 +3,7 @@ import React, {Component} from "react";
 // Class component
 class Users extends Component{
     render() {
-        const { users } = this.props;
+        const { users, deleteUser } = this.props;
         const userList = users.map(user=>{
             if(user.age > 25) {
                 return (
@@ -11,6 +11,7 @@ class Users extends Component{
                         <p>Name : {user.name}</p>
                         <p>Age : {user.age}</p>
                         <p>Profession : {user.profession}</p>
+                        <button onClick={()=>{deleteUser(user.id)}}>Delete</button>
                     </div>
                 );
             }
