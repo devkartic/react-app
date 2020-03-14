@@ -1,13 +1,14 @@
 import React, {Component} from 'react';
 import './App.css';
-import Test from "./components/Test";
+import Users from "./components/Users";
+import CreateUser from "./components/CreateUser";
 class App extends Component{
     state = {
         users : [
-            {id : 1, name : 'John', profession : 'Programmer'},
-            {id : 2, name : 'Bablu', profession : 'Automation Engineer'},
-            {id : 3, name : 'Kartic', profession : 'Sr. Programmer'},
-            {id : 4, name : 'Juton', profession : 'Businessman'},
+            {id : 1, name : 'John',age : 27, profession : 'Programmer'},
+            {id : 2, name : 'Bablu',age : 25, profession : 'Automation Engineer'},
+            {id : 3, name : 'Kartic',age : 30, profession : 'Sr. Programmer'},
+            {id : 4, name : 'Juton',age : 35, profession : 'Businessman'},
         ]
     };
   render() {
@@ -15,7 +16,8 @@ class App extends Component{
         <div className="App">
             <h1>My First React App</h1>
             <p>Welcome to my app :)</p>
-            <Test users={this.state.users}/>
+            <Users users={this.state.users}/>
+            <CreateUser />
         </div>
     );
   }

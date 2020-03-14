@@ -1,17 +1,19 @@
 import React, {Component} from "react";
 
 // Class component
-class Test extends Component{
+class Users extends Component{
     render() {
         const { users } = this.props;
         const userList = users.map(user=>{
-            return (
-                <div key={user.id}>
-                    <p>Name : { user.name }</p>
-                    <p>Age : { user.age }</p>
-                    <p>Profession : { user.profession }</p>
-                </div>
-            );
+            if(user.age > 25) {
+                return (
+                    <div key={user.id}>
+                        <p>Name : {user.name}</p>
+                        <p>Age : {user.age}</p>
+                        <p>Profession : {user.profession}</p>
+                    </div>
+                );
+            }
         });
 
         return(
@@ -25,7 +27,7 @@ class Test extends Component{
 // Functional component
 /*
 
-const Test = ({users}) => { //receive user with destructure
+const Users = ({users}) => { //receive user with destructure
     const userList = users.map(user=>{
         return (
             <div key={user.id}>
@@ -45,4 +47,4 @@ const Test = ({users}) => { //receive user with destructure
 */
 
 
-export default Test;
+export default Users;
