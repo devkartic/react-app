@@ -32,7 +32,16 @@ class App extends Component{
         })
     }
 
-  render() {
+    componentDidMount() {
+        console.log('component did mounted');
+    }
+
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        console.log('component updated');
+        console.log(prevState, prevProps, snapshot);
+    }
+
+    render() {
     return (
         <div className="App">
             <h1>My First React App</h1>
